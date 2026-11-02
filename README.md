@@ -1,8 +1,8 @@
-# 🎯 KBC: Python Terminal Quiz
+#  KBC: Python Terminal Quiz
 
 A fun, text-based quiz trivia game inspired by *Kaun Banega Crorepati*, built in pure Python. No external libraries and no setup, just run it in your terminal and test your own brain.
 
-## 🧠 The Spirit of the Game
+##  The Spirit of the Game
 
 This game is meant to be played **honestly, on your own**.
 
@@ -12,7 +12,7 @@ This game is meant to be played **honestly, on your own**.
 
 The only person you're competing against is yesterday's you. If you don't know an answer, guess, take the penalty, and learn from it. That's the whole point.
 
-## 🎮 Features
+##  Features
 
 - Multiple quiz categories (currently **Python Language** and **Basic Maths**)
 - Multiple-choice questions with 4 options each
@@ -22,7 +22,7 @@ The only person you're competing against is yesterday's you. If you don't know a
 - Input validation, so typing something invalid never crashes the game
 - **Infinitely extensible**: add as many questions and categories as you want
 
-## 🚀 How to Run
+##  How to Run
 
 **Requirements:** Python 3.6 or higher
 
@@ -30,14 +30,14 @@ The only person you're competing against is yesterday's you. If you don't know a
 python3 game.py
 ```
 
-## 📜 How to Play
+##  How to Play
 
 1. Start the game and choose a category by entering its number.
 2. Read the rules shown on screen.
 3. Answer each question by entering the option number (1-4).
 4. See your final score when all questions are done.
 
-## ➕ Extending the Game
+##  Extending the Game
 
 ### Add a question
 Append a dictionary to any questions list:
@@ -69,7 +69,7 @@ POINTS_CORRECT = 2
 POINTS_WRONG = -1
 ```
 
-## 🗺️ Ideas for the Future
+##  Ideas for the Future
 
 - Shuffle questions and options on every run
 - Lifelines (50-50, Skip, Flip the Question)
