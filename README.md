@@ -1,102 +1,83 @@
-### Hi! Welcome to your VS-Code Space!
+# 🎯 KBC: Python Terminal Quiz
 
-You can use this just like you would vs-code on your own computer! For security reasons, we can not give you root access to the container, but we have preinstalled a number of development tools for you!
+A fun, text-based quiz trivia game inspired by *Kaun Banega Crorepati*, built in pure Python. No external libraries and no setup, just run it in your terminal and test your own brain.
 
-#### Pre-installed tools:
-If a tool you need is not listed, attempt to install it using one of the package managers listed, and if that is not possible, ask in #spaces on slack and I can probably add the tool!
+## 🧠 The Spirit of the Game
 
-If a tool listed here is not working, wait a few minutes and try again! The installation is ran in the background upon space creation to minimize space creation times, so you might have to wait a minute or two for all tools to become available
+This game is meant to be played **honestly, on your own**.
 
-##### Hackatime
+- No AI assistants (ChatGPT, Claude, Gemini, etc.)
+- No Googling
+- No asking friends, family, or classmates
 
-Make sure to set your hackatime api key in settings! if you have done that, Hackatime has been auto installed and set up for you, and will be tracking your time
+The only person you're competing against is yesterday's you. If you don't know an answer, guess, take the penalty, and learn from it. That's the whole point.
 
-##### General
-```
-git
-github-cli
-curl
-wget
-nano
-vim
-unzip
-zip
-build-essentials
-cmake
-pkg-config
-jq
-tree
-htop
-tmux
-less
-ripgrep
-fd-find
-rsync
-openssh-client
-apt-transport-https
-ca-certificates
-gnupg
-```
-##### Python:
-```
-python3
-python3-pip
-python3-venv
-python3-dev
-python3-setuptools
-uv
+## 🎮 Features
+
+- Multiple quiz categories (currently **Python Language** and **Basic Maths**)
+- Multiple-choice questions with 4 options each
+- Scoring: **+2** for every correct answer, **-1** for every wrong answer
+- Live score after every question
+- Final result with correct-answer count and maximum possible score
+- Input validation, so typing something invalid never crashes the game
+- **Infinitely extensible**: add as many questions and categories as you want
+
+## 🚀 How to Run
+
+**Requirements:** Python 3.6 or higher
+
+```bash
+python3 game.py
 ```
 
-##### Javascript:
-```
-nodejs
-npm
-yarn
-pnpm
+## 📜 How to Play
+
+1. Start the game and choose a category by entering its number.
+2. Read the rules shown on screen.
+3. Answer each question by entering the option number (1-4).
+4. See your final score when all questions are done.
+
+## ➕ Extending the Game
+
+### Add a question
+Append a dictionary to any questions list:
+
+```python
+{
+    "question": "Which symbol starts a comment in Python?",
+    "options": ["//", "#", "/*", "--"],
+    "answer": "#",
+}
 ```
 
-##### Java:
-```
-openjdk-17-jdk
-openjdk-17-jre
+Nothing else needs to change. The game counts questions automatically.
+
+### Add a new category
+
+1. Create a new questions list (e.g. `gk_questions = [...]`).
+2. Register it in the `categories` dictionary:
+
+```python
+"3": Category("General Knowledge", gk_questions),
 ```
 
-##### Rust:
-```
-rust
-cargo
+### Change the scoring
+Edit these constants at the top of the file:
+
+```python
+POINTS_CORRECT = 2
+POINTS_WRONG = -1
 ```
 
-##### PHP:
-```
-php 
-php-cli 
-php-common 
-php-curl 
-php-json 
-php-mbstring 
-php-xml 
-php-zip
-```
+## 🗺️ Ideas for the Future
 
-##### Database:
-```
-sqlite3
-postgresql-client
-mysql-client
-redis-tools
-```
+- Shuffle questions and options on every run
+- Lifelines (50-50, Skip, Flip the Question)
+- Difficulty levels and prize-money ladder
+- High-score saving to a file
+- Timer for each question
+- More categories: Operating Systems, General Knowledge, Science, and more
 
-##### Ruby:
-```
-ruby
-rails
-```
+## 📄 License
 
-###### Other:
-```
-go
-crystal
-ffmpeg
-imagemagick
-```
+Free to use, modify, and share for learning purposes.
