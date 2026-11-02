@@ -89,11 +89,25 @@ def choose_category():
         print("Invalid choice. Please enter 1 or 2.")
 
 
-def show_rules():
-    print("\n----- GAME RULES -----")
-    print("game rules...................")
-    print("------------------------------")
+def show_rules(category):
+    total = len(category.questions)
+    max_score = total * POINTS_CORRECT
 
+    print("\n" + "=" * 40)
+    print("              GAME RULES")
+    print("=" * 40)
+    print(f"1. You will be asked {total} multiple-choice questions.")
+    print("2. Each question has 4 options. Enter the option number (1-4).")
+    print(f"3. Correct answer: +{POINTS_CORRECT} points.")
+    print(f"4. Wrong answer: {POINTS_WRONG} point.")
+    print("5. Every question must be answered. There is no skipping.")
+    print("6. There is no timer, but think before you answer.")
+    print("   Once you submit an answer, it cannot be changed.")
+    print(f"7. Maximum possible score: {max_score}.")
+    print("   Your score can go negative if you answer wrongly often.")
+    print("8. Play honestly. No AI tools, no internet search,")
+    print("   and no help from other people. Play only for yourself.")
+    print("=" * 40)
 
 def ask_question(number, total, q):
     print(f"\nQuestion {number}/{total}: {q['question']}")
@@ -138,7 +152,7 @@ def main():
     show_welcome()
     category = choose_category()
     print(f"\nYou hvae chosen: {category.name}")
-    show_rules()
+    show_rules(category)
     input("\nPress Enter to start...")
     score, correct_count, total = play(category)
     show_result(score, correct_count,total)
